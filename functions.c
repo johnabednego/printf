@@ -3,7 +3,7 @@
 /************************* PRINT CHAR *************************/
 
 /**
- * print_char - Prints a char
+ * char_print - Prints a char
  * @types: List a of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -12,7 +12,7 @@
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_char(va_list types, char buffer[],
+int char_print(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 char c = va_arg(types, int);
@@ -21,7 +21,7 @@ return (handle_write_char(c, buffer, flags, width, precision, size));
 }
 /************************* PRINT A STRING *************************/
 /**
- * print_string - Prints a string
+ * string_print - Prints a string
  * @types: List a of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -30,7 +30,7 @@ return (handle_write_char(c, buffer, flags, width, precision, size));
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_string(va_list types, char buffer[],
+int string_print(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 int length = 0, i;
@@ -76,7 +76,7 @@ return (write(1, str, length));
 }
 /************************* PRINT PERCENT SIGN *************************/
 /**
-* print_percent - Prints a percent sign
+* percent_print - Prints a percent sign
 * @types: Lista of arguments
 * @buffer: Buffer array to handle print
 * @flags:  Calculates active flags
@@ -85,7 +85,7 @@ return (write(1, str, length));
 * @size: Size specifier
 * Return: Number of chars printed
 */
-int print_percent(va_list types, char buffer[],
+int percent_print(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 UNUSED(types);
@@ -99,7 +99,7 @@ return (write(1, "%%", 1));
 
 /************************* PRINT INT *************************/
 /**
-* print_int - Print int
+* int_print - Print int
 * @types: Lista of arguments
 * @buffer: Buffer array to handle print
 * @flags:  Calculates active flags
@@ -108,7 +108,7 @@ return (write(1, "%%", 1));
 * @size: Size specifier
 * Return: Number of chars printed
 */
-int print_int(va_list types, char buffer[],
+int int_print(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 int i = BUFF_SIZE - 2;
@@ -143,7 +143,7 @@ return (write_number(is_negative, i, buffer, flags, width, precision, size));
 
 /************************* PRINT BINARY *************************/
 /**
-* print_binary - Prints an unsigned number
+* binary_print - Prints an unsigned number
 * @types: Lista of arguments
 * @buffer: Buffer array to handle print
 * @flags:  Calculates active flags
@@ -152,7 +152,7 @@ return (write_number(is_negative, i, buffer, flags, width, precision, size));
 * @size: Size specifier
 * Return: Numbers of char printed.
 */
-int print_binary(va_list types, char buffer[],
+int binary_print(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 unsigned int n, m, i, sum;

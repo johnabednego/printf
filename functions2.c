@@ -2,7 +2,7 @@
 
 /****************** PRINT POINTER ******************/
 /**
- * print_pointer - Prints the value of a pointer variable
+ * pointer_print - Prints the value of a pointer variable
  * @types: List a of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -11,7 +11,7 @@
  * @size: Size specifier
  * Return: Number of chars printed.
  */
-int print_pointer(va_list types, char buffer[],
+int pointer_print(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 char extra_c = 0, padd = ' ';
@@ -54,7 +54,7 @@ width, flags, padd, extra_c, padd_start));
 
 /************************* PRINT NON PRINTABLE *************************/
 /**
-* print_non_printable - Prints ascii codes in hexa of non printable chars
+* non_printable_print - Prints ascii codes in hexa of non printable chars
 * @types: Lista of arguments
 * @buffer: Buffer array to handle print
 * @flags:  Calculates active flags
@@ -63,7 +63,7 @@ width, flags, padd, extra_c, padd_start));
 * @size: Size specifier
 * Return: Number of chars printed
 */
-int print_non_printable(va_list types, char buffer[],
+int non_printable_print(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 int i = 0, offset = 0;
@@ -94,7 +94,7 @@ return (write(1, buffer, i + offset));
 
 /************************* PRINT REVERSE *************************/
 /**
-* print_reverse - Prints reverse string.
+* reverse_print - Prints reverse string.
 * @types: Lista of arguments
 * @buffer: Buffer array to handle print
 * @flags:  Calculates active flags
@@ -104,7 +104,7 @@ return (write(1, buffer, i + offset));
 * Return: Numbers of chars printed
 */
 
-int print_reverse(va_list types, char buffer[],
+int reverse_print(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 char *str;
@@ -137,7 +137,7 @@ return (count);
 }
 /************************* PRINT A STRING IN ROT13 *************************/
 /**
-* print_rot13string - Print a string in rot13.
+* rot13string_print - Print a string in rot13.
 * @types: Lista of arguments
 * @buffer: Buffer array to handle print
 * @flags:  Calculates active flags
@@ -146,7 +146,7 @@ return (count);
 * @size: Size specifier
 * Return: Numbers of chars printed
 */
-int print_rot13string(va_list types, char buffer[],
+int rot13string_print(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 char x;
